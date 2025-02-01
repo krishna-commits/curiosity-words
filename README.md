@@ -1,5 +1,2 @@
-# Cheatsheet for Technologies
-
-
-https://cheatsheet.krishnaneupane.com
-
+Test
+This is tesy
