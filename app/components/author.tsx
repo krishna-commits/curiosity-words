@@ -21,9 +21,8 @@ export default function Author({ date,title }: { date: string ; title:string }) 
     const [isCopied, setIsCopied] = useState(false);
 
     const copy = async () => {
-      await navigator.clipboard.writeText(text);
+      await navigator.clipboard.writeText(window.location.href);
       setIsCopied(true);
-
       setTimeout(() => {
         setIsCopied(false);
       }, 10000);
@@ -65,11 +64,11 @@ export default function Author({ date,title }: { date: string ; title:string }) 
   };
   return (
     <div className="flex items-center space-x-3">
-      <img
+      {/* <img
         className="inline-block h-12 w-12 rounded-full ring-1 ring-slate-200"
         src={siteConfig.author_image}
         alt=""
-      />
+      /> */}
       <div className="flex justify-between w-full">
         <div>
           <div className="flex items-center space-x-1">
@@ -84,7 +83,7 @@ export default function Author({ date,title }: { date: string ; title:string }) 
           <TelegramShare title={title} url={typeof window !== 'undefined' && window.location.href ? window.location.href : ''} size={30} round />
           <WhatsappShare title={title}  url={typeof window !== 'undefined' && window.location.href ? window.location.href : ''} size={30} round />
           <TwitterShare title={title} url={typeof window !== 'undefined' && window.location.href ? window.location.href : ''} size={30} round />
-          <CopyButton  text={typeof window !== 'undefined' && window.location.href ? window.location.href : ''} />
+          <CopyButton  text={typeof window !== 'undefined' && window.location.href ? window.location.href : 'xxx'} />
         </div>
       </div>
     </div>
