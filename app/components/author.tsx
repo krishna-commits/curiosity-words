@@ -15,8 +15,6 @@ interface CopyButtonProps {
 }
 export default function Author({ date,title }: { date: string ; title:string }) {
 
-    
-
   const CopyButton = ({ text }: CopyButtonProps) => {
     const [isCopied, setIsCopied] = useState(false);
 
@@ -79,10 +77,10 @@ export default function Author({ date,title }: { date: string ; title:string }) 
           </div>
         </div>
         <div className="flex gap-2 align-middle justify-center items-center">
-          <LinkedinShare title={title} url={typeof window !== 'undefined' && window.location.href ? window.location.href : ''} size={30} round />
-          <TelegramShare title={title} url={typeof window !== 'undefined' && window.location.href ? window.location.href : ''} size={30} round />
-          <WhatsappShare title={title}  url={typeof window !== 'undefined' && window.location.href ? window.location.href : ''} size={30} round />
-          <TwitterShare title={title} url={typeof window !== 'undefined' && window.location.href ? window.location.href : ''} size={30} round />
+        <LinkedinShare title={title} url={window.location.href} size={30} round />
+    <TelegramShare title={title} url={window.location.href} size={30} round />
+    <WhatsappShare title={title} url={window.location.href} size={30} round />
+    <TwitterShare title={title} url={window.location.href} size={30} round />
           <CopyButton  text={typeof window !== 'undefined' && window.location.href ? window.location.href : 'xxx'} />
         </div>
       </div>
