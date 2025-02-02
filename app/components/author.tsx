@@ -14,7 +14,7 @@ interface CopyButtonProps {
   text: string;
 }
 export default function Author({ date,title }: { date: string ; title:string }) {
-
+  const shareUrl = window.location.href;
   const CopyButton = ({ text }: CopyButtonProps) => {
     const [isCopied, setIsCopied] = useState(false);
 
@@ -81,7 +81,7 @@ export default function Author({ date,title }: { date: string ; title:string }) 
   <>
     <LinkedinShare title={title} url={window.location.href} size={30} round />
     <TelegramShare title={title} url={window.location.href} size={30} round />
-    <WhatsappShare title={title} url={window.location.href} size={30} round />
+    <WhatsappShare title={title} url={shareUrl} size={30} round />
     <TwitterShare title={title} url={window.location.href} size={30} round />
   </>
 )}
